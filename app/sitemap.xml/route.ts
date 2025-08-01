@@ -1,7 +1,7 @@
 // app/sitemap.xml/route.ts
 
 export async function GET() {
-  const baseUrl = 'https://localehost:3000.com' // ← غيره لدومينك الفعلي
+  const baseUrl = 'https://next-portfolio-pi-bay.vercel.app' // ← غيره لدومينك الفعلي
 
   const routes = [
     '/',

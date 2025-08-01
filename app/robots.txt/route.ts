@@ -7,7 +7,7 @@ export function GET() {
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://next-portfolio-pi-bay.vercel.app/sitemap.xml
   `.trim()
 
   return new NextResponse(content, {

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, Database, Layout, Server, PenToolIcon as Tool, Library } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Skills() {
+  const { t , language } = useLanguage();
   const skillCategories = [
     {
       title: "Programming Languages",
@@ -63,10 +65,10 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4`}>{t("skills.title")}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            My technical expertise and tools I use to bring projects to life.
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 
@@ -105,7 +107,7 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-6">Skill Proficiency</h3>
+          <h3 className={`text-2xl font-semibold mb-6 ${language === "ar" ? "font-cairo" : ""}`}>{t("skills.proficiency")}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
               { name: "React.js", level: 90 },

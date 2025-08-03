@@ -5,15 +5,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-muted py-8">
+    <footer className="bg-muted py-8" dir="auto">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex-col md:flex-row justify-between items-center" style={{ display: 'flex'}}>
           <div className="mb-4 md:mb-0">
             <h3 className="text-lg font-bold">Abd-El-Raheem Elhlwany</h3>
-            <p className="text-sm text-foreground/70">Frontend Developer</p>
+            <p className="text-sm text-foreground/70 text-center">website Developer</p>
           </div>
 
-          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+          <div className="items-center gap-4 mb-4 md:mb-0" style={{ display: 'flex'}}>
             <Link
               href="https://github.com/motasb"
               target="_blank"

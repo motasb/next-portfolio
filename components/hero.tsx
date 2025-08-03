@@ -6,12 +6,14 @@ import { ArrowDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { GrGithub, GrLinkedin, GrMail } from "react-icons/gr"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Hero() {
+  const { t , language } = useLanguage()
   return (
     <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className={`flex flex-col md:flex-row items-center justify-between gap-12 ${language === "ar" ? "md:flex-row-reverse" : ""}`}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -20,28 +22,28 @@ export default function Hero() {
           >
             <div className="space-y-2">
               <motion.h2
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl font-medium text-primary"
               >
-                Hello, I&#39;m
+                {t("hero.greeting")}
               </motion.h2>
               <motion.h1
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold"
               >
-                Abd-El-Raheem Elhlwany
+                {t("hero.name")}
               </motion.h1>
               <motion.h3
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: language === "ar" ? 20 : -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-2xl md:text-3xl font-semibold text-foreground/80"
+                className={`text-2xl md:text-3xl font-semibold text-foreground/80 ${language === "ar" ? "font-cairo" : ""}`}
               >
-                Frontend Developer
+                {t("hero.title")}
               </motion.h3>
             </div>
 
@@ -49,10 +51,9 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-lg text-foreground/70 max-w-xl"
+              className={`text-lg text-foreground/70 max-w-xl ${language === "ar" ? "font-cairo" : ""}`}
             >
-              Passionate about creating responsive, user-friendly interfaces with React and Next.js. Specialized in
-              building SEO-optimized web applications with modern web standards.
+               {t("hero.description")}
             </motion.p>
 
             <motion.div
@@ -62,10 +63,10 @@ export default function Hero() {
               className="flex flex-wrap gap-4"
             >
               <Button asChild size="lg">
-                <a href="#contact">Contact Me</a>
+                <a href="#contact">{t("hero.contactMe")}</a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="#projects">View Projects</a>
+                <a href="#projects">{t("hero.viewProjects")}</a>
               </Button>
             </motion.div>
 

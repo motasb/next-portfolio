@@ -11,8 +11,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Send } from "lucide-react"
 import { toast } from "sonner"
 import { SiGmail, SiWhatsapp } from "react-icons/si"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Contact() {
+  const { t , language} = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,8 +54,8 @@ export default function Contact() {
     });
     
     if (response.ok) {
-      toast("Message sent!",{
-        description: "Thank you for your message. I'll get back to you soon.",
+      toast(t("contact.messageSent"),{
+        description: t("contact.messageDescription"),
       })
       setFormData({
         name: "",
@@ -72,32 +74,32 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: <SiGmail className="h-6 w-6 text-primary" />,
-      title: "Email",
+      title: t("about.email"),
       value: "abdelraheemelhlwany@gmail.com",
       link: "mailto:abdelraheemelhlwany@gmail.com",
     },
     {
       icon: <SiWhatsapp className="h-6 w-6 text-primary" />,
-      title: "Phone",
+      title: t("contact.whatsapp"),
       value: "+20 1020575095",
       link: "https://wa.me/+201020575095?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته",
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Phone",
+      title: t("about.phone"),
       value: "+20 1020575095",
       link: "tel:+20 1020575095",
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Location",
-      value: "Sohag, Egypt",
+      title: t("about.location"),
+      value: t("about.country"),
       link: "https://maps.google.com/?q=Sohag,Egypt",
     },
   ]
 
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className={`py-16 md:py-24 ${language === "ar" ? "font-cairo" : ""}`}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,10 +108,10 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("contact.title")}</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -121,15 +123,16 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-1 space-y-6"
           >
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t("contact.info")}</h3>
 
             {contactInfo.map((info, index) => (
               <Card key={index}>
-                <CardContent className="p-6 flex items-start gap-4">
+                <CardContent className="p-6 items-start gap-4" style={{display: "flex"}}>
                   <div className="mt-1">{info.icon}</div>
                   <div>
                     <h4 className="font-medium text-lg">{info.title}</h4>
                     <a
+                      dir= "auto"
                       href={info.link}
                       target= "_blank"
                       rel= "noopener noreferrer"
@@ -143,8 +146,8 @@ export default function Contact() {
             ))}
 
             <div className="pt-6">
-              <h4 className="font-medium text-lg mb-4">Connect With Me</h4>
-              <div className="flex gap-4">
+              <h4 className="font-medium text-lg mb-4">{t("contact.connectWith")}</h4>
+              <div className="gap-4" style={{ display: "flex"}}>
                 <Button asChild variant="outline" size="icon">
                   <a href="https://github.com/motasb" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <svg
@@ -197,25 +200,25 @@ export default function Contact() {
           >
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                <h3 className="text-2xl font-semibold mb-6">{t("contact.sendMessage")}</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Your Name
+                        {t("contact.yourName")}
                       </label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder={language === "en" ?"Mohamed ahmed": "محمد أحمد"}
                         required
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Your Email
+                        {t("contact.yourEmail")}
                       </label>
                       <Input
                         id="email"
@@ -223,34 +226,34 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder="mohamed@gmail.com"
                         required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
+                      {t("contact.subject")}
                     </label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Project Inquiry"
+                      placeholder={language === "en" ?"Project Inquiry": "استفسار عن مشروع"}
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Message
+                      {t("contact.message")}
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Your message here..."
+                      placeholder={language=== "en" ?"Your message here...": "رسالتك هنا..."}
                       rows={6}
                       required
                     />
@@ -278,12 +281,12 @@ export default function Contact() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Sending...
+                       {t("contact.sending")}
                       </span>
                     ) : (
                       <span className="flex items-center gap-2">
                         <Send size={16} />
-                        Send Message
+                        {t("contact.send")}
                       </span>
                     )}
                   </Button>

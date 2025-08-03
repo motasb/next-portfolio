@@ -3,72 +3,69 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { GrGithub } from "react-icons/gr";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function Projects() {
+  const { t , language } = useLanguage();
   const projects = [
-    {
-      title: "Acarat Sohag Real Estate",
-      description:
-        "A real estate listing website with property search, filtering, and contact forms for potential buyers.",
-      image: "/images/sohag.webp",
-      tags: ["Next.js", "React", "Tailwind CSS", "PostgreSQL","prisma","shadcn/ui" , "cloudinary"],
-      githubFrontend: "",
-      githubBackend: "",
-      liveUrl: "https://acaratsohag.com",
-    },
-    {
-      title: "E-Commerce Website",
-      description:
-        "A full-stack e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
-      image: "/images/bookStore.webp",
-      tags: ["Next.js", "React", "MongoDB", "Express", "Node.js" , "Tailwind CSS", "node-mailer"],
-      githubFrontend: "https://book-store-elhlwany.netlify.app",
-      githubBackend: "https://github.com/motasb/backend",
-      liveUrl: "",
-    },
-    {
-      title: "Cloud Hosting",
-      description:
-        "A cloud hosting service website with responsive design, service listings, and pricing plans.",
-      image: "/images/CloudHosting.webp",
-      tags: ["Next.js", "Tailwind CSS", "React", "shadcn/ui" , "node-mailer" ,"cloudinary"],
-      githubFrontend: "",
-      githubBackend: "",
-      liveUrl: "https://cloud-hosting-project-topaz.vercel.app",
-    },
-    {
-      title: "Albayan Academy",
-      description:
-        "A complete registration system for an educational academy with course management, student profiles, and admin dashboard.",
-      image: "/images/albayan.webp",
-      tags: ["Next.js", "React", "Tailwind CSS" , "shadcn/ui" , "node-mailer" ],
-      githubFrontend: "",
-      githubBackend: "",
-      liveUrl: "https://www.albayan-academy.org",
-    },
-    {
-      title: "Telawa Academy",
-      description:
-        "An educational platform for online courses with video lessons, progress tracking, and certificate generation.",
-      image: "/images/telawa.webp",
-      tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui" , "node-mailer"],
-      githubFrontend: "",
-      githubBackend: "",
-      liveUrl: "https://www.telawaacademy.com",
-    },
-    {
-      title: "Blog Website",
-      description:
-        "A blog application that contains the feature of adding photos, posts and comments.",
-      image: "/images/blog.webp",
-      tags: ["React", "Tailwind CSS", "MongoDB", "cloudinary", "node-mailer"],
-      githubFrontend: "",
-      githubBackend: "",
-      liveUrl: "https://elhlwany-blog.netlify.app",
-    },
-  ];
+  {
+    title: t("projects.realestate.title"),
+    description: t("projects.realestate.description"),
+    image: "/images/sohag.webp",
+    tags: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "Prisma", "shadcn/ui", "Cloudinary"],
+    githubFrontend: "",
+    githubBackend: "",
+    liveUrl: "https://acaratsohag.com",
+  },
+  {
+    title: t("projects.ecommerce.title"),
+    description: t("projects.ecommerce.description"),
+    image: "/images/bookStore.webp",
+    tags: ["Next.js", "React", "MongoDB", "Express", "Node.js", "Tailwind CSS", "Nodemailer"],
+    githubFrontend: "https://book-store-elhlwany.netlify.app",
+    githubBackend: "https://github.com/motasb/backend",
+    liveUrl: "",
+  },
+  {
+    title: t("projects.cloudhosting.title"),
+    description: t("projects.cloudhosting.description"),
+    image: "/images/CloudHosting.webp",
+    tags: ["Next.js", "Tailwind CSS", "React", "Nodemailer", "Cloudinary"],
+    githubFrontend: "",
+    githubBackend: "",
+    liveUrl: "https://cloud-hosting-project-topaz.vercel.app",
+  },
+  {
+    title: t("projects.albayan.title"),
+    description: t("projects.albayan.description"),
+    image: "/images/albayan.webp",
+    tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
+    githubFrontend: "",
+    githubBackend: "",
+    liveUrl: "https://www.albayan-academy.org",
+  },
+  {
+    title: t("projects.telawa.title"),
+    description: t("projects.telawa.description"),
+    image: "/images/telawa.webp",
+    tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
+    githubFrontend: "",
+    githubBackend: "",
+    liveUrl: "https://www.telawaacademy.com",
+  },
+  {
+    title: t("projects.blog.title"),
+    description: t("projects.blog.description"),
+    image: "/images/blog.webp",
+    tags: ["React", "Tailwind CSS", "MongoDB", "Cloudinary", "Nodemailer"],
+    githubFrontend: "",
+    githubBackend: "",
+    liveUrl: "https://elhlwany-blog.netlify.app",
+  },
+]
 
   const container = {
     hidden: { opacity: 0 },
@@ -86,7 +83,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-muted/30">
+    <section id="projects" className="py-16 md:py-24 bg-muted/30" >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,12 +92,12 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured Projects
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${language === "ar" ? "font-cairo" : ""}`}>
+            {t("projects.title")}
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            A selection of my recent work and projects I&#39;ve developed.
+          <p className={`text-lg text-foreground/70 max-w-2xl mx-auto ${language === "ar" ? "font-cairo" : ""}`}>
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -113,11 +110,12 @@ export default function Projects() {
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={item} className="h-full">
-              <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
+              <Card className={`h-full flex-col overflow-hidden hover:shadow-lg transition-shadow ${language === "ar" ? "font-cairo" : ""}`}
+               style={{ display: 'flex' }}>
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={"Project Image"}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform hover:scale-105 duration-500"
@@ -131,7 +129,7 @@ export default function Projects() {
                   <p className="text-foreground/70 mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className=" flex-wrap gap-2 mt-4" style={{ display: 'flex'}}>
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
@@ -142,16 +140,17 @@ export default function Projects() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="p-6 pt-0 flex flex-wrap gap-2">
+                <CardFooter className="p-6 pt-0 flex-wrap gap-2" style={{ display: 'flex' }}>
                   {project.githubFrontend && (
                     <Button asChild variant="outline" size="sm">
                       <a
                         href={project.githubFrontend}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1"
+                        className=" items-center gap-1"
+                        style={{ display: 'flex' }}
                       >
-                        <Github size={16} />
+                        <GrGithub size={16} />
                         Frontend
                       </a>
                     </Button>
@@ -162,9 +161,10 @@ export default function Projects() {
                         href={project.githubBackend}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1"
+                        className=" items-center gap-1"
+                        style={{ display: 'flex' }}
                       >
-                        <Github size={16} />
+                        <GrGithub size={16} />
                         Backend
                       </a>
                     </Button>
@@ -175,10 +175,11 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1"
+                        className=" items-center gap-1"
+                        style={{ display: 'flex' }}
                       >
                         <ExternalLink size={16} />
-                        Live Demo
+                        {t("projects.liveDemo")}
                       </a>
                     </Button>
                   )}

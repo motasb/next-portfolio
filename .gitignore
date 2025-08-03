@@ -20,6 +20,9 @@
 # production
 /build
 
+# codetxt
+code.txt
+
 # misc
 .DS_Store
 *.pem

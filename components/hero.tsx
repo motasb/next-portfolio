@@ -13,7 +13,8 @@ export default function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24">
       <div className="container mx-auto px-4">
-        <div className={`flex flex-col md:flex-row items-center justify-between gap-12 ${language === "ar" ? "md:flex-row-reverse" : ""}`}>
+        <div className={`flex-col md:flex-row items-center justify-between gap-12 ${language === "ar" ? "md:flex-row-reverse" : ""}`}
+        style={{display: "flex"}}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

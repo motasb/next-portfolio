@@ -118,6 +118,8 @@ export default function Skills() {
               { name: "Node.js", level: 75 },
               { name: "MongoDB", level: 70 },
               { name: "PostgreSQL", level: 65 },
+              { name: "Docker", level: 70 },
+              { name: "Jira", level: 60 },
             ].map((skill, index) => (
               <div key={index} className="space-y-2">
                 <div className="flex justify-between">

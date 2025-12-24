@@ -23,7 +23,7 @@ export default function Projects() {
   {
     title: t("projects.ecommerce.title"),
     description: t("projects.ecommerce.description"),
-    image: "/images/bookStore.webp",
+    image: "/images/quareer.webp",
     tags: ["Next.js", "React", "Prisma", "PostgreSQL", "Node.js", "Tailwind CSS", "Nodemailer", "Redux", "Next.Auth", ],
     githubFrontend: "",
     githubBackend: "",

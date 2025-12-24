@@ -72,9 +72,9 @@ const translations = {
     // Projects Section
     "projects.title": "المشاريع المميزة",
     "projects.subtitle": "مجموعة مختارة من أعمالي الحديثة والمشاريع التي طورتها.",
-    "projects.ecommerce.title": "موقع التجارة الإلكترونية",
+    "projects.ecommerce.title": "متجر قوارير للملابس",
     "projects.ecommerce.description":
-      "منصة تجارة إلكترونية متكاملة مع قوائم المنتجات ووظائف السلة ومصادقة المستخدم ومعالجة المدفوعات.",
+      " متجر مع قوائم المنتجات ووظائف السلة ومصادقة المستخدم وادارة المخزن للملابس.",
     "projects.cloudhosting.title": "استضافة سحابية",
     "projects.cloudhosting.description": "موقع خدمة استضافة سحابية بتصميم متجاوب وقوائم خدمات وخطط أسعار.",
     "projects.albayan.title": "أكاديمية البيان",
@@ -172,7 +172,7 @@ const translations = {
     // Projects Section
     "projects.title": "Featured Projects",
     "projects.subtitle": "A selection of my recent work and projects I've developed.",
-    "projects.ecommerce.title": "E-Commerce Website",
+    "projects.ecommerce.title": "E-Commerce Quareer ",
     "projects.ecommerce.description":
       "A full-stack e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
     "projects.cloudhosting.title": "Cloud Hosting",

@@ -9,63 +9,79 @@ import { GrGithub } from "react-icons/gr";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function Projects() {
-  const { t , language } = useLanguage();
+  const { t, language } = useLanguage();
   const projects = [
-  {
-    title: t("projects.realestate.title"),
-    description: t("projects.realestate.description"),
-    image: "/images/sohag.webp",
-    tags: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "Prisma", "shadcn/ui", "Cloudinary"],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://acaratsohag.com",
-  },
-  {
-    title: t("projects.ecommerce.title"),
-    description: t("projects.ecommerce.description"),
-    image: "/images/quareer.webp",
-    tags: ["Next.js", "React", "Prisma", "PostgreSQL", "Node.js", "Tailwind CSS", "Nodemailer", "Redux", "Next.Auth", ],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://e-commerce-by-next-sage.vercel.app",
-  },
-  {
-    title: t("projects.cloudhosting.title"),
-    description: t("projects.cloudhosting.description"),
-    image: "/images/CloudHosting.webp",
-    tags: ["Next.js", "Tailwind CSS", "React", "Nodemailer", "Cloudinary"],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://cloud-hosting-project-topaz.vercel.app",
-  },
-  {
-    title: t("projects.albayan.title"),
-    description: t("projects.albayan.description"),
-    image: "/images/albayan.webp",
-    tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://www.albayan-academy.org",
-  },
-  {
-    title: t("projects.telawa.title"),
-    description: t("projects.telawa.description"),
-    image: "/images/telawa.webp",
-    tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://www.telawaacademy.com",
-  },
-  {
-    title: t("projects.blog.title"),
-    description: t("projects.blog.description"),
-    image: "/images/blog.webp",
-    tags: ["React", "Tailwind CSS", "MongoDB", "Cloudinary", "Nodemailer"],
-    githubFrontend: "",
-    githubBackend: "",
-    liveUrl: "https://elhlwany-blog.netlify.app",
-  },
-]
+    {
+      title: t("projects.realestate.title"),
+      description: t("projects.realestate.description"),
+      image: "/images/sohag.webp",
+      tags: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "PWA",
+        "swr",
+        "Prisma",
+        "shadcn/ui",
+        "Cloudinary",
+      ],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://acaratsohag.com",
+    },
+    {
+      title: t("projects.ecommerce.title"),
+      description: t("projects.ecommerce.description"),
+      image: "/images/subul.webp",
+      tags: [
+        "Next.js",
+        "React",
+        "Prisma",
+        "PostgreSQL",
+        "React-Hook-Form",
+        "swr",
+        "Shadcn/ui",
+        "Neon",
+        "Tailwind CSS",
+        "Nodemailer",
+        "Redux",
+        "Next.Auth",
+        "Cloudinary",
+        "PWA",
+      ],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://subulstore.com",
+    },
+    {
+      title: t("projects.albayan.title"),
+      description: t("projects.albayan.description"),
+      image: "/images/albayan.webp",
+      tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://www.albayan-academy.org",
+    },
+    {
+      title: t("projects.telawa.title"),
+      description: t("projects.telawa.description"),
+      image: "/images/telawa.webp",
+      tags: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Nodemailer"],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://www.telawaacademy.com",
+    },
+    {
+      title: t("projects.blog.title"),
+      description: t("projects.blog.description"),
+      image: "/images/blog.webp",
+      tags: ["React", "Tailwind CSS", "MongoDB", "Cloudinary", "Nodemailer"],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://elhlwany-blog.netlify.app",
+    },
+  ];
 
   const container = {
     hidden: { opacity: 0 },
@@ -83,7 +99,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-muted/30" >
+    <section id="projects" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,11 +108,15 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${language === "ar" ? "font-cairo" : ""}`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 ${language === "ar" ? "font-cairo" : ""}`}
+          >
             {t("projects.title")}
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className={`text-lg text-foreground/70 max-w-2xl mx-auto ${language === "ar" ? "font-cairo" : ""}`}>
+          <p
+            className={`text-lg text-foreground/70 max-w-2xl mx-auto ${language === "ar" ? "font-cairo" : ""}`}
+          >
             {t("projects.subtitle")}
           </p>
         </motion.div>
@@ -110,8 +130,10 @@ export default function Projects() {
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={item} className="h-full">
-              <Card className={`h-full flex-col overflow-hidden hover:shadow-lg transition-shadow ${language === "ar" ? "font-cairo" : ""}`}
-               style={{ display: 'flex' }}>
+              <Card
+                className={`h-full flex-col overflow-hidden hover:shadow-lg transition-shadow ${language === "ar" ? "font-cairo" : ""}`}
+                style={{ display: "flex" }}
+              >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -129,7 +151,10 @@ export default function Projects() {
                   <p className="text-foreground/70 mb-4">
                     {project.description}
                   </p>
-                  <div className=" flex-wrap gap-2 mt-4" style={{ display: 'flex'}}>
+                  <div
+                    className=" flex-wrap gap-2 mt-4"
+                    style={{ display: "flex" }}
+                  >
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
@@ -140,7 +165,10 @@ export default function Projects() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="p-6 pt-0 flex-wrap gap-2" style={{ display: 'flex' }}>
+                <CardFooter
+                  className="p-6 pt-0 flex-wrap gap-2"
+                  style={{ display: "flex" }}
+                >
                   {project.githubFrontend && (
                     <Button asChild variant="outline" size="sm">
                       <a
@@ -148,7 +176,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className=" items-center gap-1"
-                        style={{ display: 'flex' }}
+                        style={{ display: "flex" }}
                       >
                         <GrGithub size={16} />
                         Frontend
@@ -162,7 +190,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className=" items-center gap-1"
-                        style={{ display: 'flex' }}
+                        style={{ display: "flex" }}
                       >
                         <GrGithub size={16} />
                         Backend
@@ -176,7 +204,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className=" items-center gap-1"
-                        style={{ display: 'flex' }}
+                        style={{ display: "flex" }}
                       >
                         <ExternalLink size={16} />
                         {t("projects.liveDemo")}

@@ -1,12 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Code, Database, Layout, Server, PenToolIcon as Tool, Library } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Code,
+  Database,
+  Layout,
+  Server,
+  PenToolIcon as Tool,
+  Library,
+} from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 
 export default function Skills() {
-  const { t , language } = useLanguage();
+  const { t, language } = useLanguage();
   const skillCategories = [
     {
       title: "Programming Languages",
@@ -16,17 +23,39 @@ export default function Skills() {
     {
       title: "Frameworks",
       icon: <Layout className="h-6 w-6 text-primary" />,
-      skills: ["React.js", "Next.js", "Express.js", "Tailwind CSS", "Bootstrap"],
+      skills: [
+        "React.js",
+        "Next.js",
+        "Express.js",
+        "Tailwind CSS",
+        "Bootstrap",
+      ],
     },
     {
       title: "Libraries",
       icon: <Library className="h-6 w-6 text-primary" />,
-      skills: ["Next-Auth", "Shadcn/ui", "Axios", "Redux", "Framer Motion"],
+      skills: [
+        "Next-Auth",
+        "Shadcn/ui",
+        "Axios",
+        "Redux",
+        "Framer Motion",
+        "PWA",
+        "React-Hook-Form",
+        "Nodemailer",
+        "Cloudinary",
+      ],
     },
     {
       title: "Tools & Technologies",
       icon: <Tool className="h-6 w-6 text-primary" />,
-      skills: ["Git", "GitHub", "VS Code", "Responsive Design", "UX Optimization"],
+      skills: [
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Responsive Design",
+        "UX Optimization",
+      ],
     },
     {
       title: "Backend",
@@ -38,7 +67,7 @@ export default function Skills() {
       icon: <Database className="h-6 w-6 text-primary" />,
       skills: ["MongoDB", "PostgreSQL", "Prisma ORM"],
     },
-  ]
+  ];
 
   const container = {
     hidden: { opacity: 0 },
@@ -48,12 +77,12 @@ export default function Skills() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   return (
     <section id="skills" className="py-16 md:py-24">
@@ -65,7 +94,9 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4`}>{t("skills.title")}</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4`}>
+            {t("skills.title")}
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             {t("skills.subtitle")}
@@ -89,7 +120,10 @@ export default function Skills() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                      <span
+                        key={skillIndex}
+                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -107,7 +141,11 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <h3 className={`text-2xl font-semibold mb-6 ${language === "ar" ? "font-cairo" : ""}`}>{t("skills.proficiency")}</h3>
+          <h3
+            className={`text-2xl font-semibold mb-6 ${language === "ar" ? "font-cairo" : ""}`}
+          >
+            {t("skills.proficiency")}
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {[
               { name: "React.js", level: 90 },
@@ -141,5 +179,5 @@ export default function Skills() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

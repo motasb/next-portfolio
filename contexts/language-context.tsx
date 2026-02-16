@@ -40,7 +40,7 @@ const translations = {
     "about.location": "الموقع",
     "about.email": "البريد الإلكتروني",
     "about.phone": "الهاتف",
-    "about.country": "مصر , سوهاج",
+    "about.country": "مصر , سوهاج / القاهرة - 6 أكتوبر",
     "about.education": "التعليم",
     "about.educationDetails": "بكالوريوس العلوم، جامعة الأزهر، أسيوط، مصر (2022)",
     "about.grade": "التقدير: جيد",
@@ -72,7 +72,7 @@ const translations = {
     // Projects Section
     "projects.title": "المشاريع المميزة",
     "projects.subtitle": "مجموعة مختارة من أعمالي الحديثة والمشاريع التي طورتها.",
-    "projects.ecommerce.title": "متجر قوارير للملابس",
+    "projects.ecommerce.title": "متجر سٌبل للملابس",
     "projects.ecommerce.description":
       " متجر مع قوائم المنتجات ووظائف السلة ومصادقة المستخدم وادارة المخزن للملابس.",
     "projects.cloudhosting.title": "استضافة سحابية",
@@ -140,7 +140,7 @@ const translations = {
     "about.location": "Location",
     "about.email": "Email",
     "about.phone": "Phone",
-    "about.country": "Egypt, Sohag",
+    "about.country": "Egypt, Sohag / Cairo - 6th of October",
     "about.education": "Education",
     "about.educationDetails": "Bachelor of Science, Al-Azhar University, Assiut, Egypt (2022)",
     "about.grade": "Grade: Good",
@@ -172,7 +172,7 @@ const translations = {
     // Projects Section
     "projects.title": "Featured Projects",
     "projects.subtitle": "A selection of my recent work and projects I've developed.",
-    "projects.ecommerce.title": "E-Commerce Quareer ",
+    "projects.ecommerce.title": "Subul Store",
     "projects.ecommerce.description":
       "A full-stack e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
     "projects.cloudhosting.title": "Cloud Hosting",

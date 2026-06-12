@@ -12,6 +12,30 @@ export default function Projects() {
   const { t, language } = useLanguage();
   const projects = [
     {
+      title: t("projects.ecommerce.title"),
+      description: t("projects.ecommerce.description"),
+      image: "/images/dinastore.webp",
+      tags: [
+        "Next.js",
+        "React",
+        "Prisma",
+        "PostgreSQL",
+        "React-Hook-Form",
+        "swr",
+        "Shadcn/ui",
+        "Neon",
+        "Tailwind CSS",
+        "Nodemailer",
+        "Redux",
+        "Next.Auth",
+        "Cloudinary",
+        "PWA",
+      ],
+      githubFrontend: "",
+      githubBackend: "",
+      liveUrl: "https://dina-store.com",
+    },
+    {
       title: t("projects.realestate.title"),
       description: t("projects.realestate.description"),
       image: "/images/sohag.webp",

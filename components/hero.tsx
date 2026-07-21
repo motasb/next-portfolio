@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { GrGithub, GrLinkedin, GrMail } from "react-icons/gr"
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/src/contexts/language-context"
 
 export default function Hero() {
   const { t , language } = useLanguage()

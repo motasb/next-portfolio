@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { GrGithub } from "react-icons/gr";
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from "@/src/contexts/language-context";
 
 export default function Projects() {
   const { t, language } = useLanguage();
   const projects = [
     {
-      title: t("projects.ecommerce.title"),
+      title: t("projects.ecommerce.title-1"),
       description: t("projects.ecommerce.description"),
       image: "/images/dinastore.webp",
       tags: [

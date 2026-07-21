@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, GraduationCap, User } from "lucide-react"
 import { SiGmail, SiWhatsapp } from "react-icons/si"
-import { useLanguage } from "@/contexts/language-context"
+import { useLanguage } from "@/src/contexts/language-context"
 
 export default function About() {
   const { t, language } = useLanguage()

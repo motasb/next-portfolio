@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
 import { LanguageToggle } from "./language-toggle"
-import { useLanguage } from "@/contexts/language-context"
 import { motion } from "framer-motion"
+import { useLanguage } from "@/src/contexts/language-context"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

@@ -73,6 +73,7 @@ const translations = {
     "projects.title": "المشاريع المميزة",
     "projects.subtitle": "مجموعة مختارة من أعمالي الحديثة والمشاريع التي طورتها.",
     "projects.ecommerce.title": "متجر سٌبل للملابس",
+    "projects.ecommerce.title-1": "متجر دينا للملابس",
     "projects.ecommerce.description":
       " متجر مع قوائم المنتجات ووظائف السلة ومصادقة المستخدم وادارة المخزن للملابس.",
     "projects.cloudhosting.title": "استضافة سحابية",
@@ -173,6 +174,7 @@ const translations = {
     "projects.title": "Featured Projects",
     "projects.subtitle": "A selection of my recent work and projects I've developed.",
     "projects.ecommerce.title": "Subul Store",
+    "projects.ecommerce.title-1": "Dina Store",
     "projects.ecommerce.description":
       "A full-stack e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
     "projects.cloudhosting.title": "Cloud Hosting",

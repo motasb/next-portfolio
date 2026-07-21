@@ -10,7 +10,7 @@ import {
   PenToolIcon as Tool,
   Library,
 } from "lucide-react";
-import { useLanguage } from "@/contexts/language-context";
+import { useLanguage } from "@/src/contexts/language-context";
 
 export default function Skills() {
   const { t, language } = useLanguage();

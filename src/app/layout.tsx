@@ -5,8 +5,8 @@ import { Cairo, Inter } from "next/font/google"
 import Navbar from "@/components/navbar"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
-import { LanguageProvider } from "@/contexts/language-context"
 import Script from "next/script"
+import { LanguageProvider } from "../contexts/language-context"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const cairo = Cairo({ subsets: ["arabic"], variable: "--font-cairo" })
